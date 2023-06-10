@@ -40,7 +40,7 @@ Click the Build and run button in the Build settings and run the scene.
 
 ### Step 9:
 
-The Sphere after touching the cube it will disappeared and Press the key [R] the redircting to the new scene that is page2.
+The Sphere after touching the cube it will disappeared and Press the key [space] for redircting to the new scene that is page2.
 
 
 
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("scene2");
+            SceneManager.LoadScene("level2");
         }
     }
     private void OnMouseDown()
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "object")
+        if (collision.gameObject.tag == "cube")
         {
             Destroy(collision.gameObject);
             WinText.SetActive(true);
